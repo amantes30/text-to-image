@@ -4,71 +4,20 @@
     <title>Image Generator</title>
     <link rel="stylesheet" type="text/css" href="style.css" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link
-      rel="icon"
-      type="image/png"
-      href="https://amantes30.github.io/icons/SVG/logo(new).svg"
-    />
-    <link
-      rel="'apple-touch-icon"
-      href="https://amantes30.github.io/icons/SVG/logo(new).svg"
-    />
-    <style>
-        body{
-            display: flex;
-            flex-direction: row;
-            padding: 8px;
-            overflow: hidden;
-
-        }
-        #intro{
-            width: 50%;
-        }
-        #cover-img{
-           width: 50%;
-        }
-        
-      h1 {
-        font-size: 10em;
-        text-align: left;
-      }
-      a{
-        text-decoration: none;
-        color: white;
-        padding: 14px;
-        font-weight: 600;
-        background-image: linear-gradient(rgb(113 113 239), rgb(255 42 42)), linear-gradient(to right, #f35757, #6580e3);
-        border-radius: 23px;
-        transition: 250ms ease-in-out;
-        display: inline-block;
-      }
-      a:hover{
-        border-radius: 10px;
-      }
-      @media screen and (max-width: 600px) {
-        h1 {
-          font-size: 5em;
-        }
-        img{
-            display: none;
-        }
-        #intro{
-            width: 100%;
-        }
-        #cover-img{
-            display: none;
-        }
-        
-      }
-    </style>
+    <link rel="icon" type="image/png" href="https://amantes30.github.io/icons/SVG/logo(new).svg" />
+    <link rel="'apple-touch-icon" href="https://amantes30.github.io/icons/SVG/logo(new).svg" />
   </head>
   <body>
-    <div id="intro">
-      <h1>Text-to-Image</h1>
-      <a href="./index.html">Get Started</a>
-    </div>
-    <div id="cover-img">
-        <img width="100%" src="img.png"></img>
-    </div>
+    <h1>Text-to-Image</h1>
+    
+     <div id="image-frame">
+        <h1 id="loading-txt"></h1>
+        <img id="image"></img>
+    </div> 
+    <form action="" method="post">
+      <input type="text" id="description" name="description" placeholder="Describe the picture you want to see"/><br />
+      <button type="submit" id="generate-btn">Generate</button>
+    </form>
+    <script src="script.js"></script>
   </body>
 </html>
