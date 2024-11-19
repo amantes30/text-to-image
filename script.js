@@ -33,7 +33,8 @@ document.getElementById('generate-btn').addEventListener('click', function(e) {
         setTimeout(() => {
             console.log(response);
             image.style.display = 'block';
-            image.src = response.url;
+            image.src = URL.createObjectURL(response.blob());
+            
             generate_btn.textContent = 'Generate';
             loading_txt.style.display = 'none';
             generate_btn.classList.remove('loading');
