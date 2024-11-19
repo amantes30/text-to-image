@@ -1,0 +1,103 @@
+body {
+  background: linear-gradient(45deg, #f9afaf, #7490f6);
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+
+  height: 100dvh;
+  width: 100dvw;
+  display: flex;
+  justify-content: flex-start;
+  flex-direction: column;
+  align-items: center;
+}
+h1 {
+  display: inline-block;
+  color: transparent;
+  background: linear-gradient(140deg, #f35757, #6580e3);
+  background-clip: text;
+}
+form {
+  width: 90%;
+  max-width: 700px;
+  display: flex;
+  position: absolute;
+  bottom: 10px;
+}
+form input {
+  width: 80%;
+  padding: 10px;
+  margin: 5px 0;
+  border: 1px solid #ccc;
+  border-radius: 20px;
+  letter-spacing: 0.5px;
+  font: 1.2em sans-serif;
+}
+form input:focus {
+  outline: none;
+}
+
+form button {
+  width: 20%;
+  padding: 10px;
+  margin: 10px 0;
+  border: 3px solid transparent;
+  border-radius: 5px;
+  box-sizing: content-box;
+  cursor: pointer;
+  font-size: 1.2em;
+  color: white;
+  background-image: linear-gradient(rgb(113 113 239), rgb(255 42 42)),
+    linear-gradient(to right, #f35757, #6580e3);
+  background-size: 200% 200%;
+
+  background-origin: border-box;
+  transition: 250ms ease-in-out;
+}
+
+form button.loading {
+  background-clip: padding-box, border-box;
+  animation: loading 1s infinite;
+  border-radius: 20px;
+}
+#loading-txt{
+  text-align: center;
+}
+@keyframes loading {
+  0% {
+    background-position: 0% 100%;
+  }
+
+  50% {
+    background-position: 200% 50%;
+  }
+
+  100% {
+    background-position: 0% 100%;
+  }
+}
+#image-frame {
+  width: 95%;
+  max-width: 600px;
+  height: 500px;
+  object-fit: cover;
+  border-radius: 2px;
+  border: 1px solid #ccc;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+@media screen and (max-width: 600px) {
+  
+  form button, form input {
+    font-size: 0.8em;
+  }
+ 
+  
+}
