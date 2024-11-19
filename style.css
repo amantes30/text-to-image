@@ -55,7 +55,7 @@ form button {
   transition: 250ms ease-in-out;
 }
 
-form button.loading {
+form button:disabled {
   background-clip: padding-box, border-box;
   animation: loading 1s infinite;
   border-radius: 20px;

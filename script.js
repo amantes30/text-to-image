@@ -1,5 +1,5 @@
 document.addEventListener('DOMContentLoaded', function() {
-    const image = document.getElementById('image');            
+    let image = document.getElementById('image');            
     const image_frame = document.getElementById('image-frame');
     const loading_txt = document.getElementById('loading-txt');
     
@@ -23,6 +23,7 @@ document.getElementById('generate-btn').addEventListener('click', function(e) {
     loading_txt.textContent = 'Loading...';
     loading_txt.style.textAlign = 'center';
     generate_btn.classList.add('loading');
+    generate_btn.disabled = true;
 
     fetch('https://quiet-poetry-1563.amanueltesfaye55.workers.dev/' + encodeURIComponent(description)).then(function(response) {
         if (!response.ok) {
@@ -33,11 +34,18 @@ document.getElementById('generate-btn').addEventListener('click', function(e) {
         setTimeout(() => {
             console.log(response);
             image.style.display = 'block';
-            image.src = URL.createObjectURL(response.blob());
-            
+            console.log(response.blob().then(blob => {
+                const url = URL.createObjectURL(blob);
+                image.src = url;
+                console.log(url);
+            }));
+
+            //image= response;
+
             generate_btn.textContent = 'Generate';
             loading_txt.style.display = 'none';
             generate_btn.classList.remove('loading');
+            generate_btn.disabled = false;
         }, 5000);
        
         
